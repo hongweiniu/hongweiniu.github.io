@@ -138,9 +138,10 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-columns: 320px minmax(0, 680px);
   gap: 58px;
   align-items: center;
+  justify-content: center;
 }
 
 .profile-panel {
@@ -192,6 +193,7 @@ img {
 
 .hero-copy .eyebrow {
   color: var(--blue);
+  margin-bottom: 18px;
   font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 700;
   text-transform: none;
@@ -219,6 +221,15 @@ h1 span {
   color: var(--blue);
   font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 700;
+}
+
+.hero-intro {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-align: justify;
 }
 
 h2 {
@@ -856,6 +867,12 @@ body.lightbox-open {
 
   h1 span {
     font-size: 1.12rem;
+  }
+
+  .hero-intro {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    text-align: left;
   }
 
   h2 {
