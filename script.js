@@ -41,6 +41,22 @@ if (lastUpdated) {
     .catch(() => {});
 }
 
+const heroCopy = document.querySelector(".hero-copy");
+const aboutSection = document.querySelector("#about");
+const aboutParagraph = aboutSection?.querySelector(".prose p");
+
+if (heroCopy && aboutSection && aboutParagraph) {
+  const heroSection = heroCopy.closest(".hero");
+  const heroIntro = document.createElement("p");
+  heroIntro.className = "hero-intro";
+  heroIntro.textContent = aboutParagraph.textContent.trim().replace(/\s+/g, " ");
+  heroCopy.appendChild(heroIntro);
+
+  aboutSection.removeAttribute("id");
+  aboutSection.hidden = true;
+  if (heroSection) heroSection.id = "about";
+}
+
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))

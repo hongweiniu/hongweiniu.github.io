@@ -138,10 +138,9 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 320px minmax(0, 680px);
+  grid-template-columns: 320px minmax(0, 1fr);
   gap: 58px;
   align-items: center;
-  justify-content: center;
 }
 
 .profile-panel {
@@ -199,6 +198,15 @@ img {
   text-transform: none;
 }
 
+.hero-intro {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+
 h1,
 h2,
 h3,
@@ -221,15 +229,6 @@ h1 span {
   color: var(--blue);
   font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 700;
-}
-
-.hero-intro {
-  max-width: 760px;
-  margin-bottom: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.9;
-  text-align: justify;
 }
 
 h2 {
