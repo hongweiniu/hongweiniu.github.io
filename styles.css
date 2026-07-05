@@ -79,8 +79,13 @@ img {
 .brand {
   flex: 0 0 auto;
   color: var(--accent-dark);
-  font-weight: 800;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -183,6 +188,13 @@ img {
   font-size: 0.88rem;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.hero-copy .eyebrow {
+  color: var(--blue);
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  font-weight: 700;
+  text-transform: none;
 }
 
 h1,
@@ -443,8 +455,29 @@ h3 {
 }
 
 .project-item {
-  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  padding: 18px 22px;
   border-left: 4px solid var(--accent);
+}
+
+.project-visual {
+  width: 220px;
+  max-width: 100%;
+  height: 46px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.project-copy {
+  min-width: 0;
+}
+
+.project-copy h3:last-child,
+.project-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .timeline {
@@ -466,9 +499,10 @@ h3 {
 .timeline article {
   position: relative;
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  gap: 28px;
-  min-height: 88px;
+  grid-template-columns: 160px 150px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  min-height: 104px;
   padding: 18px 20px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
@@ -489,14 +523,34 @@ h3 {
 }
 
 .timeline time {
-  grid-row: 1 / span 2;
+  grid-column: 1;
   color: var(--blue);
   font-weight: 900;
 }
 
-.timeline h3,
-.timeline p {
+.unit-logo {
   grid-column: 2;
+  width: 150px;
+  height: 66px;
+  padding: 7px 14px;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.unit-logo.logo-square {
+  padding: 7px 46px;
+}
+
+.unit-logo.logo-wide {
+  padding: 7px 10px;
+}
+
+.timeline-copy {
+  grid-column: 3;
+  min-width: 0;
 }
 
 .timeline p {
@@ -549,6 +603,140 @@ h3 {
   background: rgba(255, 255, 255, 0.86);
 }
 
+.running-content {
+  display: grid;
+  gap: 18px;
+}
+
+.running-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.running-gallery figure {
+  overflow: hidden;
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(25, 45, 39, 0.06);
+}
+
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  cursor: zoom-in;
+  background: transparent;
+  border: 0;
+}
+
+.gallery-trigger:focus-visible {
+  outline: 3px solid rgba(17, 117, 108, 0.35);
+  outline-offset: -3px;
+}
+
+.running-gallery img {
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  background: #ffffff;
+  transition: transform 180ms ease;
+}
+
+.gallery-trigger:hover img {
+  transform: scale(1.03);
+}
+
+.running-gallery .certificate img {
+  object-fit: contain;
+  padding: 8px;
+}
+
+.running-gallery figcaption {
+  padding: 9px 10px 11px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.image-lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+  background: rgba(12, 22, 20, 0.76);
+  border: 0;
+}
+
+.lightbox-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  width: min(100%, 1100px);
+  max-height: calc(100vh - 56px);
+  margin: 0;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.26);
+}
+
+.lightbox-panel img {
+  width: 100%;
+  max-height: calc(100vh - 150px);
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  background: rgba(18, 60, 54, 0.92);
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.lightbox-close:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.72);
+}
+
+.lightbox-panel figcaption {
+  color: var(--muted);
+  font-weight: 800;
+  text-align: center;
+}
+
 .site-footer {
   padding: 26px 0;
   color: var(--muted);
@@ -563,8 +751,17 @@ h3 {
   justify-content: space-between;
 }
 
-.footer-inner p {
+.footer-meta {
+  display: grid;
+  gap: 3px;
+}
+
+.footer-meta p {
   margin-bottom: 0;
+}
+
+.last-updated {
+  font-size: 0.92rem;
 }
 
 @media (max-width: 880px) {
@@ -608,6 +805,10 @@ h3 {
   .research-grid,
   .stat-grid {
     grid-template-columns: 1fr;
+  }
+
+  .running-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -700,6 +901,17 @@ h3 {
     gap: 6px;
   }
 
+  .project-item {
+    grid-template-columns: 118px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .project-visual {
+    width: 118px;
+    height: 40px;
+  }
+
   .publication-item {
     padding: 64px 18px 20px;
   }
@@ -715,15 +927,39 @@ h3 {
   }
 
   .timeline article {
-    grid-template-columns: 1fr;
-    gap: 6px;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 8px 14px;
   }
 
-  .timeline time,
-  .timeline h3,
-  .timeline p {
-    grid-column: auto;
-    grid-row: auto;
+  .timeline time {
+    grid-column: 1 / -1;
+  }
+
+  .unit-logo {
+    grid-column: 1;
+    width: 86px;
+    height: 56px;
+    padding: 6px 10px;
+  }
+
+  .unit-logo.logo-square {
+    padding: 6px 22px;
+  }
+
+  .unit-logo.logo-wide {
+    grid-column: 1 / -1;
+    width: min(100%, 220px);
+    height: 62px;
+    padding: 6px 8px;
+    justify-self: start;
+  }
+
+  .unit-logo.logo-wide + .timeline-copy {
+    grid-column: 1 / -1;
+  }
+
+  .timeline-copy {
+    grid-column: 2;
   }
 
   .records-table {
@@ -733,6 +969,33 @@ h3 {
   .records-table [role="row"] {
     grid-template-columns: 120px 150px 260px;
     min-width: 530px;
+  }
+
+  .running-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .running-gallery img {
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 3;
+  }
+
+  .running-gallery .certificate img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .image-lightbox {
+    padding: 14px;
+  }
+
+  .lightbox-panel {
+    max-height: calc(100vh - 28px);
+    padding: 12px;
+  }
+
+  .lightbox-panel img {
+    max-height: calc(100vh - 118px);
   }
 
   .footer-inner {
