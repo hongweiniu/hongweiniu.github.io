@@ -511,7 +511,7 @@ h3 {
 
 .timeline article::before {
   position: absolute;
-  top: 27px;
+  top: 50%;
   left: 154px;
   width: 12px;
   height: 12px;
@@ -520,6 +520,7 @@ h3 {
   border: 3px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--line);
+  transform: translateY(-50%);
 }
 
 .timeline time {
