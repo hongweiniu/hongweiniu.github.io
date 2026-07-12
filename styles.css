@@ -223,14 +223,6 @@ h1 {
   letter-spacing: 0;
 }
 
-h1 span {
-  display: block;
-  margin-top: 10px;
-  color: var(--blue);
-  font-size: clamp(1.25rem, 2.2vw, 2rem);
-  font-weight: 700;
-}
-
 h2 {
   margin-bottom: 0;
   color: var(--accent-dark);
@@ -862,10 +854,6 @@ body.lightbox-open {
   h1 {
     font-size: 2.65rem;
     margin-bottom: 16px;
-  }
-
-  h1 span {
-    font-size: 1.12rem;
   }
 
   .hero-intro {
