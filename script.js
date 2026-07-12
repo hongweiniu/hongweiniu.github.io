@@ -4,10 +4,11 @@ if (year) {
 }
 
 const lastUpdated = document.querySelector("#lastUpdated");
+const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
 const formatUpdatedAt = (dateText) => {
   const date = new Date(dateText);
   if (Number.isNaN(date.getTime())) return "";
-  return new Intl.DateTimeFormat("zh-CN", {
+  return new Intl.DateTimeFormat(isEnglish ? "en-US" : "zh-CN", {
     dateStyle: "long",
     timeStyle: "short",
     timeZone: "Asia/Shanghai",
@@ -20,7 +21,9 @@ const setLastUpdated = (dateText) => {
   const formattedDate = formatUpdatedAt(dateText);
   if (!formattedDate) return;
   lastUpdated.dateTime = dateText;
-  lastUpdated.textContent = `${formattedDate}（北京时间）`;
+  lastUpdated.textContent = isEnglish
+    ? `${formattedDate} (Beijing Time)`
+    : `${formattedDate}（北京时间）`;
 };
 
 if (lastUpdated) {
@@ -58,7 +61,10 @@ if (heroCopy && aboutSection && aboutParagraph) {
 }
 
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
-const sections = navLinks
+const sectionLinks = navLinks.filter((link) =>
+  link.getAttribute("href")?.startsWith("#"),
+);
+const sections = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
@@ -67,7 +73,7 @@ if ("IntersectionObserver" in window && sections.length > 0) {
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => {
+        sectionLinks.forEach((link) => {
           link.classList.toggle(
             "active",
             link.getAttribute("href") === `#${entry.target.id}`,

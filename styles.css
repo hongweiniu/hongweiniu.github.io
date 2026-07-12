@@ -198,6 +198,12 @@ img {
   text-transform: none;
 }
 
+.site-nav .language-link {
+  margin-left: 6px;
+  color: var(--blue);
+  font-weight: 700;
+}
+
 .hero-intro {
   max-width: 760px;
   margin-bottom: 0;
@@ -221,6 +227,10 @@ h1 {
   font-size: clamp(3rem, 7vw, 5.7rem);
   line-height: 1.02;
   letter-spacing: 0;
+}
+
+html[lang="en"] h1 {
+  font-size: 4.2rem;
 }
 
 h2 {
@@ -529,6 +539,20 @@ h3 {
   grid-column: 1;
   color: var(--blue);
   font-weight: 900;
+}
+
+@media (min-width: 621px) {
+  html[lang="en"] .timeline::before {
+    left: 220px;
+  }
+
+  html[lang="en"] .timeline article {
+    grid-template-columns: 220px 150px minmax(0, 1fr);
+  }
+
+  html[lang="en"] .timeline article::before {
+    left: 214px;
+  }
 }
 
 .unit-logo {
@@ -856,6 +880,10 @@ body.lightbox-open {
     margin-bottom: 16px;
   }
 
+  html[lang="en"] h1 {
+    font-size: 2.65rem;
+  }
+
   .hero-intro {
     font-size: 0.98rem;
     line-height: 1.75;
@@ -965,6 +993,11 @@ body.lightbox-open {
 
   .timeline-copy {
     grid-column: 2;
+  }
+
+  .timeline p {
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
 
   .records-table {
