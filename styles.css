@@ -51,6 +51,18 @@ a:hover {
   color: var(--copper);
 }
 
+.institution-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.institution-link:hover,
+.institution-link:focus-visible {
+  color: var(--copper);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 img {
   display: block;
   max-width: 100%;
