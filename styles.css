@@ -473,6 +473,21 @@ h3 {
   line-height: 1.55;
 }
 
+.publication-item .pub-title a {
+  display: inline;
+  margin-top: 0;
+  color: inherit;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.publication-item .pub-title a:hover,
+.publication-item .pub-title a:focus-visible {
+  color: var(--copper);
+  text-decoration-color: currentColor;
+}
+
 .project-list {
   display: grid;
   gap: 14px;
