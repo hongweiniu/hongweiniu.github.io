@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hongweiniu.github.io/sitemap.xml
+Sitemap: https://17hc3dd23531.vicp.fun/sitemap-vicp.xml

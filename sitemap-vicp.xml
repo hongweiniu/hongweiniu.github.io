@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <url>
+    <loc>https://17hc3dd23531.vicp.fun/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://17hc3dd23531.vicp.fun/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://17hc3dd23531.vicp.fun/en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://17hc3dd23531.vicp.fun/" />
+  </url>
+  <url>
+    <loc>https://17hc3dd23531.vicp.fun/en.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://17hc3dd23531.vicp.fun/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://17hc3dd23531.vicp.fun/en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://17hc3dd23531.vicp.fun/" />
+  </url>
+  <url>
+    <loc>https://17hc3dd23531.vicp.fun/moments.html</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+</urlset>
