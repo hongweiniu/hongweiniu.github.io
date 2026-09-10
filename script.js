@@ -134,3 +134,22 @@ if (lightboxBackdrop) {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeLightbox();
 });
+
+// The public hosts use separate Cloudflare Web Analytics sites.
+const cloudflareAnalyticsTokens = {
+  "hongweiniu.github.io": "bc651ec7e68b44d7818ed5cd2b5a804e",
+  "17hc3dd23531.vicp.fun": "40f7d7856b6e489e937df6774287761f",
+};
+const cloudflareAnalyticsToken =
+  cloudflareAnalyticsTokens[window.location.hostname];
+
+if (cloudflareAnalyticsToken) {
+  const cloudflareAnalyticsBeacon = document.createElement("script");
+  cloudflareAnalyticsBeacon.type = "module";
+  cloudflareAnalyticsBeacon.src =
+    "https://static.cloudflareinsights.com/beacon.min.js";
+  cloudflareAnalyticsBeacon.dataset.cfBeacon = JSON.stringify({
+    token: cloudflareAnalyticsToken,
+  });
+  document.body.appendChild(cloudflareAnalyticsBeacon);
+}
