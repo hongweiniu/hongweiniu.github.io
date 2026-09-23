@@ -416,6 +416,27 @@ h3 {
   color: #33413c;
 }
 
+.student-list {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  color: #33413c;
+  list-style: none;
+}
+
+.student-list li {
+  display: grid;
+  grid-template-columns: minmax(76px, max-content) minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+}
+
+.student-list strong {
+  color: var(--ink);
+  font-weight: 750;
+}
+
 .callout {
   padding: 20px 22px;
   color: #24342f;
@@ -490,6 +511,22 @@ h3 {
 .publication-item .pub-title a:focus-visible {
   color: var(--copper);
   text-decoration-color: currentColor;
+}
+
+.publication-item .publication-resource-link {
+  display: inline;
+  margin: 0 0 0 0.7rem;
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.publication-item .publication-resource-link:hover,
+.publication-item .publication-resource-link:focus-visible {
+  color: var(--copper);
 }
 
 .corresponding-mark {
