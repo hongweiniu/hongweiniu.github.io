@@ -555,6 +555,38 @@ h3 {
   border-left: 4px solid var(--accent);
 }
 
+.teaching-content {
+  display: grid;
+  gap: 28px;
+  min-width: 0;
+}
+
+.teaching-subheading {
+  margin: 0 0 16px;
+  color: var(--blue);
+  font-size: 1rem;
+}
+
+.teaching-course {
+  margin: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.course-term {
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.teaching-list h4 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.42;
+}
+
 .teaching-list .project-item {
   border-left-color: var(--blue);
 }
